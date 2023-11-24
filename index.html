@@ -19,7 +19,7 @@
                     <div class="juego_box">
                         <div class="box_title">Fulbacho</div>
                         <img src="./fulbacho.jpg" onclick="toggleOpen('fulbacho')"/><br>
-                        <div class="popup" id="fulbacho">El Fulbacho es un juego de mesa basado en el fútbol argentino y juegos clásicos de avanzar
+                        <div class="popup start isClosed" id="fulbacho">El Fulbacho es un juego de mesa basado en el fútbol argentino y juegos clásicos de avanzar
                             por el tablero comprando propiedades. En este caso lo que se compra son jugadores para mejorar
                             el equipo con el que se juegan partidos en una mezcla de deck-building y azar. Originalmente creado
                             en papel y cartulina, esta versión de Tabletopia es del 2020.
@@ -29,7 +29,7 @@
                     <div class="juego_box">
                         <div class="box_title">Turtle vs Rabbit</div>
                         <img src="./rvst.jpg" onclick="toggleOpen('turtle')"/><br>
-                        <div class="popup" id="turtle">El Turtle vs Rabbit es un juego creado por Odyssey Games. Fue un proyecto
+                        <div class="popup start isClosed" id="turtle">El Turtle vs Rabbit es un juego creado por Odyssey Games. Fue un proyecto
                             para la materia Introducción a los Videojuegos de la carrera Tecnicatura en Programación de
                             Videojuegos de la Universidad Nacional de Hurlingham. Es un juego de plataformas en el que
                             manejamos a la tortuga e intentamos vencer a la liebre de la famosa fábula, utilizando
@@ -39,7 +39,7 @@
                     <div class="juego_box">
                         <div class="box_title">Horror Light</div>
                         <img src="./horror.jpg" onclick="toggleOpen('horror')"/><br>
-                        <div class="popup" id="horror">El Horror Light es un juego creado por Odyssey Games para la materia
+                        <div class="popup start isClosed" id="horror">El Horror Light es un juego creado por Odyssey Games para la materia
                             Taller de Diseño Conceptual de Videojuegos de la carrera Tecnicatura en Programación de
                             Videojuegos de la Universidad Nacional de Hurlingham. Es un "survival horror" con vista isométrica
                             donde el protagonista debe evitar distintos monstruos mientras desentraña un horroroso misterio.
@@ -48,7 +48,7 @@
                     <div class="juego_box">
                         <div class="box_title">Mundial Gaucho</div>
                         <img src="./gaucho.jpg" onclick="toggleOpen('gaucho')"><br>
-                        <div class="popup" id="gaucho">El Mundial Gaucho es un juego creado por Odyssey Games para la GameJam+ 2023.
+                        <div class="popup start isClosed" id="gaucho">El Mundial Gaucho es un juego creado por Odyssey Games para la GameJam+ 2023.
                             Es una compilación de minijuegos basados en los juegos clásicos guachescos y nacionales argentinos,
                             como el Sapo, la jineteada o las carreras cuadreras.
                             <a href="https://gd.games/mazzalaialan/mundial-gaucho" target=”_blank”>Jugar</a></div>
@@ -75,7 +75,8 @@
         for (var i = 0; i<todos.length; i++) {
             
             if (isOpen(todos[i])) {
-                todos[i].classList.remove("isOpen")}
+                todos[i].classList.remove("isOpen")
+                todos[i].classList.add("isClosed")}
         }
     }
     function toggleOpen(id) {
@@ -86,7 +87,9 @@
         }
         else {
             closeAll()
+            frame.classList.remove("start")
             frame.classList.toggle("isOpen")
+            frame.classList.toggle("isClosed")
         }
     }
 </script>
@@ -158,9 +161,6 @@
     .popup {
         max-width: 20em;
         margin: 0.5em;
-        opacity: 0;
-        display: none;
-        transition: opacity 0.2s ease-out;
         border: 1px goldenrod solid;
         border-radius: 0.7em;
         padding: 0.5em;
@@ -168,14 +168,51 @@
         top: 15%;
         background-color: black;
         font-size: 0.5em;
-        z-index: -1000;
+    }
+    .start {
+        display: none;
     }
     #turtle, #gaucho {
         font-size: 0.45em;
     }
-    .popup.isOpen {
+    .isClosed {
+        animation: disappear 2s forwards;
+    }
+    .isOpen {
+        animation: appear 2s forwards;
+    }
+    @keyframes appear{
+        0%{
+        z-index: -1000;
+        display:none;
+        opacity:0;
+        }
+        1%{
         display:inline;
-        opacity: 1;
         z-index: 1000;
+        }
+        99%{
+        opacity:1;
+        }
+        100%{
+        z-index: 1000;
+        opacity:1;
+        display:inline;
+        }
+    }
+    @keyframes disappear{
+        0%{
+        z-index: 1000;
+        display:inline;
+        opacity:1;
+        }
+        99%{
+        opacity:0;
+        }
+        100%{
+        z-index: -1000;
+        opacity:0;
+        display:none;
+        }
     }
 </style>
