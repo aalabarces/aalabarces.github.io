@@ -67,17 +67,22 @@
 <script>    
     function isOpen(div) {
         if (div.classList.contains("isOpen")) {
-            return True}
-        else {return False}
+            return true}
+        else {return false}
     }
-    function toggleOpen(id) {
+    function closeAll() {
         let todos = document.getElementsByClassName("popup");
         for (var i = 0; i<todos.length; i++) {
-            if isOpen(todos[i]) {
-                todos[i].classList.toggle("isOpen")}
+            
+            if (isOpen(todos[i])) {
+                todos[i].classList.remove("isOpen")}
         }
+        console.log(todos)
+    }
+    function toggleOpen(id) {
+        closeAll()
         let frame = document.getElementById(id);
-        frame.classList.toggle("isOpen");
+        frame.classList.toggle("isOpen")
     }
 </script>
 <style>
@@ -143,6 +148,7 @@
     .juego_box img {
         width: 5em;
         height: 3em;
+        cursor: pointer;
     }
     .popup {
         max-width: 20em;
@@ -165,5 +171,6 @@
     .popup.isOpen {
         display:inline;
         opacity: 1;
+        z-index: 1000;
     }
 </style>
