@@ -66,9 +66,18 @@
 </html>
 <script>
     function toggleOpen(id) {
+        let todos = document.getElementsByClassName("popup");
+        for (var i = 0; i<todos.length; i++) {
+            if isOpen(item) {
+                item.classList.toggle("isOpen")}
+        }
         let frame = document.getElementById(id);
         frame.classList.toggle("isOpen");
-        frame.style.zIndex = frame.style.zIndex * -1;
+    }
+    function isOpen(div) {
+        if (div.classList.contains("isOpen")) {
+            return True}
+        else {return False}
     }
 </script>
 <style>
