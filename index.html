@@ -77,12 +77,17 @@
             if (isOpen(todos[i])) {
                 todos[i].classList.remove("isOpen")}
         }
-        console.log(todos)
     }
     function toggleOpen(id) {
-        closeAll()
+        
         let frame = document.getElementById(id);
-        frame.classList.toggle("isOpen")
+        if (isOpen(frame)){
+            closeAll()
+        }
+        else {
+            closeAll()
+            frame.classList.toggle("isOpen")
+        }
     }
 </script>
 <style>
