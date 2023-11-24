@@ -64,7 +64,12 @@
         </div>
     </body>
 </html>
-<script>
+<script>    
+    function isOpen(div) {
+        if (div.classList.contains("isOpen")) {
+            return True}
+        else {return False}
+    }
     function toggleOpen(id) {
         let todos = document.getElementsByClassName("popup");
         for (var i = 0; i<todos.length; i++) {
@@ -73,11 +78,6 @@
         }
         let frame = document.getElementById(id);
         frame.classList.toggle("isOpen");
-    }
-    function isOpen(div) {
-        if (div.classList.contains("isOpen")) {
-            return True}
-        else {return False}
     }
 </script>
 <style>
