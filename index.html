@@ -8,6 +8,7 @@
     <body>
         <div class="main_container">
             <div class="top_container">
+		        <div class="lang_img"><img src="/lang_en.png" onclick="ingles()"/>
                 <div class="title">Portfolio</div>
                 <div class="title">Agustín Alabarces</div>
                 <div class="info">Programador, diseñador de juegos, librero, músico. Vive en Buenos Aires, Argentina. Estudiante de la Tecnicatura en Programación de Videojuegos en la Universidad Nacional de Hurlingham.
@@ -65,6 +66,9 @@
     </body>
 </html>
 <script>    
+    function ingles() {
+        window.location.replace("./index_en.html");
+    }
     function isOpen(div) {
         if (div.classList.contains("isOpen")) {
             return true}
@@ -118,6 +122,9 @@
     }
     .top_container {
         text-align: center;
+    }
+    .lang_img {
+        float: right;
     }
     .info {
         font-size: 0.5em;
