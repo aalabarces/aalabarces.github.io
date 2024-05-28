@@ -1,99 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Portfolio Agustín Alabarces</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="main_container">
-            <div class="top_container">
-		<div class="lang_img"><img src="./eng.png" onclick="ingles()"/></div>
-                <div class="title">Portfolio</div>
-                <div class="title">Agustín Alabarces</div>
-                <div class="info">Programador, diseñador de juegos, librero, músico. Vive en Buenos Aires, Argentina. Estudiante de la Tecnicatura en Programación de Videojuegos en la Universidad Nacional de Hurlingham.
-                                Saxofonista y compositor de <a href="https://www.youtube.com/watch?v=N2alAElgwOg&list=PLBSTAw-qp1EX5QRS2a5wufFMdRhWZTtpV" target=”_blank”>música original</a> para jueguitos.
+
+<head>
+    <title>Portfolio Agustín Alabarces</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <div class="isClosed" id="overlay">
+        <div class="popup isClosed" id="popup">
+            <a href="" target=”_blank” id="link"></a>
+        </div>
+    </div>
+    <div class="main_container" id="main_container">
+        <div class="top_container">
+            <div class="lang_img"><img src="./static/img/eng.png" onclick="cambiarIdioma()" id="idioma" /></div>
+            <div class="title">Portfolio</div>
+            <div class="title">Agustín Alabarces</div>
+            <div class="info" id="header_info"></div>
+        </div>
+        <div class="middle_container">
+            <div class="juegos_grid">
+                <div class="juego_box">
+                    <div class="box_title">Fulbacho</div>
+                    <img src="./static/img/fulbacho.jpg" onclick="openPopup('fulbacho')" /><br>
                 </div>
-            </div>
-            <div class="middle_container">
-                <div class="juegos_grid">
-                    <div class="juego_box">
-                        <div class="box_title">Fulbacho</div>
-                        <img src="./fulbacho.jpg" onclick="toggleOpen('fulbacho')"/><br>
-                        <div class="popup start isClosed" id="fulbacho">El Fulbacho es un juego de mesa basado en el fútbol argentino y juegos clásicos de avanzar
-                            por el tablero comprando propiedades. En este caso lo que se compra son jugadores para mejorar
-                            el equipo con el que se juegan partidos en una mezcla de deck-building y azar. Originalmente creado
-                            en papel y cartulina, esta versión de Tabletopia es del 2020.
-                            <a href="https://tabletopia.com/games/fulbacho-t5euff/play-now" target=”_blank”>Jugar</a></div>
-                        
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Turtle vs Rabbit</div>
-                        <img src="./rvst.jpg" onclick="toggleOpen('turtle')"/><br>
-                        <div class="popup start isClosed" id="turtle">El Turtle vs Rabbit es un juego creado por Odyssey Games. Fue un proyecto
-                            para la materia Introducción a los Videojuegos de la carrera Tecnicatura en Programación de
-                            Videojuegos de la Universidad Nacional de Hurlingham. Es un juego de plataformas en el que
-                            manejamos a la tortuga e intentamos vencer a la liebre de la famosa fábula, utilizando
-                            la astucia para suplir la velocidad.
-                            <a href="https://mazzalaialan.itch.io/turtlevsrabbit" target=”_blank”>Jugar</a></div>
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Horror Light</div>
-                        <img src="./horror.jpg" onclick="toggleOpen('horror')"/><br>
-                        <div class="popup start isClosed" id="horror">El Horror Light es un juego creado por Odyssey Games para la materia
-                            Taller de Diseño Conceptual de Videojuegos de la carrera Tecnicatura en Programación de
-                            Videojuegos de la Universidad Nacional de Hurlingham. Es un "survival horror" con vista isométrica
-                            donde el protagonista debe evitar distintos monstruos mientras desentraña un horroroso misterio.
-                            <a href="https://gd.games/mazzalaialan/horrorlight" target=”_blank”>Jugar</a></div>
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Mundial Gaucho</div>
-                        <img src="./gaucho.jpg" onclick="toggleOpen('gaucho')"><br>
-                        <div class="popup start isClosed" id="gaucho">El Mundial Gaucho es un juego creado por Odyssey Games para la GameJam+ 2023.
-                            Es una compilación de minijuegos basados en los juegos clásicos guachescos y nacionales argentinos,
-                            como el Sapo, la jineteada o las carreras cuadreras.
-                            <a href="https://gd.games/mazzalaialan/mundial-gaucho" target=”_blank”>Jugar</a></div>
-                    </div>
+                <div class="juego_box">
+                    <div class="box_title">Turtle vs Rabbit</div>
+                    <img src="./static/img/rvst.jpg" onclick="openPopup('conejo')" /><br>
                 </div>
-            </div>
-            <div class="bottom_container">
-                <div class="contacto">
-                    Mail: <a href="mailto:aalabarces@gmail.com">aalabarces@gmail.com</a>
+                <div class="juego_box">
+                    <div class="box_title">Horror Light</div>
+                    <img src="./static/img/horror.jpg" onclick="openPopup('horror')" /><br>
+                </div>
+                <div class="juego_box">
+                    <div class="box_title">Mundial Gaucho</div>
+                    <img src="./static/img/gaucho.jpg" onclick="openPopup('gaucho')"><br>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="bottom_container">
+            <div class="contacto">
+                Mail: <a href="mailto:aalabarces@gmail.com">aalabarces@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
-<script>    
-    function ingles() {
-        window.location.replace("./index_en.html");
-    }
-    function isOpen(div) {
-        if (div.classList.contains("isOpen")) {
-            return true}
-        else {return false}
-    }
-    function closeAll() {
-        let todos = document.getElementsByClassName("popup");
-        for (var i = 0; i<todos.length; i++) {
-            
-            if (isOpen(todos[i])) {
-                todos[i].classList.remove("isOpen")
-                todos[i].classList.add("isClosed")}
-        }
-    }
-    function toggleOpen(id) {
-        
-        let frame = document.getElementById(id);
-        if (isOpen(frame)){
-            closeAll()
-        }
-        else {
-            closeAll()
-            frame.classList.remove("start")
-            frame.classList.toggle("isOpen")
-            frame.classList.toggle("isClosed")
-        }
-    }
-</script>

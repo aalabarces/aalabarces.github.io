@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 54px;
+    overflow-x: hidden;
+    color: gold;
+    font-family: monospace;
+    background-image: url("../static/img/background.jpg");
+    background-size: contain;
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 201, 1) 50%, rgba(5, 0, 57, 1) 100%); */
+}
+
+a,
+a:visited {
+    color: crimson;
+}
+
+img:hover {
+    box-shadow: rgba(72, 135, 202, 0.8) 0 0 90px 33px;
+}
+
+.main_container {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 3%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.ungrayed {
+    animation: greyOff 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation: greyOff 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.grayed {
+    animation: greyOn 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation: greyOn 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.top_container {
+    text-align: center;
+}
+
+.lang_img {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.lang_img img {
+    border-radius: 1em;
+    width: 1em;
+}
+
+.info {
+    font-size: 0.5em;
+    text-align: justify;
+    margin: 0.1em 20% 0.1em 20%;
+    z-index: 1;
+    min-height: 6em;
+}
+
+.bottom_container {
+    background-color: black;
+    font-size: 0.4em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.juegos_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: center;
+    padding: 0.5em;
+    justify-content: space-evenly;
+    animation: floatRight 1.5s forwards;
+    -webkit-animation: floatRight 1.5s forwards;
+}
+
+.juego_box {
+    text-align: center;
+    border: 1px solid goldenrod;
+    border-radius: 0.7em;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 6em;
+}
+
+.box_title {
+    height: 50%;
+}
+
+.juego_box img {
+    width: 5em;
+    height: 3em;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    max-width: 25em;
+    margin: 0.5em;
+    border: 1px goldenrod solid;
+    border-radius: 0.7em;
+    padding: 0.5em;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    background-color: black;
+    font-size: 0.5em;
+    z-index: 100;
+}
+
+.start {
+    display: none;
+}
+
+#turtle,
+#gaucho {
+    font-size: 0.45em;
+}
+
+.isClosed {
+    animation: disappear 1.5s forwards;
+}
+
+.isOpen {
+    animation: appear 1.5s forwards;
+}
+
+.contacto {
+    text-align: center;
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    position: absolute;
+}
+
+@keyframes appear {
+    0% {
+        z-index: -1000;
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: inline;
+        z-index: 1000;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        z-index: 1000;
+        opacity: 1;
+        display: inline;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        z-index: 1000;
+        display: inline;
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        z-index: -1000;
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes greyOn {
+    0% {
+        filter: grayscale(0);
+    }
+
+    100% {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes greyOff {
+    0% {
+        filter: grayscale(1);
+    }
+
+    100% {
+        filter: grayscale(0);
+    }
+}
+
+@keyframes floatRight {
+    0% {
+        transform: translateX(5000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}

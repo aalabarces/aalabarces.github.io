@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Portfolio Agustín Alabarces</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="main_container">
-            <div class="top_container">
-		<div class="lang_img"><img src="./esp.png" onclick="espaniol()"/></div>
-                <div class="title">Portfolio</div>
-                <div class="title">Agustín Alabarces</div>
-                <div class="info">Programmer, game designer, librarian, musician. Lives in Buenos Aires, Argentina. Student of Videogame Programming at Hurlingham National University.
-                                Sax player and composer of <a href="https://www.youtube.com/watch?v=N2alAElgwOg&list=PLBSTAw-qp1EX5QRS2a5wufFMdRhWZTtpV" target=”_blank”>original music</a> for videogames.
-                </div>
-            </div>
-            <div class="middle_container">
-                <div class="juegos_grid">
-                    <div class="juego_box">
-                        <div class="box_title">Fulbacho</div>
-                        <img src="./fulbacho.jpg" onclick="toggleOpen('fulbacho')"/><br>
-                        <div class="popup start isClosed" id="fulbacho">Fulbacho is a board game based on the argentinian football
-				(soccer) league and classic Monopoly style board games. Instead of property you buy players
-				to improve your team, which you use to play matches in a mix of deck-building and dice rolling.
-				Originally created in paper, this Tabletopia version is from 2020.
-				<a href="https://tabletopia.com/games/fulbacho-t5euff/play-now" target=”_blank”>Play now</a></div>
-                        
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Turtle vs Rabbit</div>
-                        <img src="./rvst.jpg" onclick="toggleOpen('turtle')"/><br>
-                        <div class="popup start isClosed" id="turtle">Turtle vs Rabbit is a game created by Odyssey Studio. It was a project for Introduction to Videogames at university. It's a platformer where the player controls the turtle and tries to beat the hare from the famous fable, using cunning to replace speed.
-                            <a href="https://mazzalaialan.itch.io/turtlevsrabbit" target=”_blank”>Play now</a></div>
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Horror Light</div>
-                        <img src="./horror.jpg" onclick="toggleOpen('horror')"/><br>
-                        <div class="popup start isClosed" id="horror">Horror Light is a videogame created by Odyssey Studio for Conceptual Videogame Design at university. It's a "survival horror" game with isometric view where the protagonist must avoid several monsters while unravelling a gruesome mistery.
-                            <a href="https://gd.games/mazzalaialan/horrorlight" target=”_blank”>Play now</a></div>
-                    </div>
-                    <div class="juego_box">
-                        <div class="box_title">Gaucho World Cup</div>
-                        <img src="./gaucho.jpg" onclick="toggleOpen('gaucho')"><br>
-                        <div class="popup start isClosed" id="gaucho">Gaucho World Cup is a videogame created by Odyssey Studio for GameJam+ 2023. It's a minigame compilation based on classic gaucho and argentinian national games, such as the toad, horse taming and "cuadreras" races.
-                            <a href="https://gd.games/mazzalaialan/mundial-gaucho" target=”_blank”>Play now</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom_container">
-                <div class="contacto">
-                    Mail: <a href="mailto:aalabarces@gmail.com">aalabarces@gmail.com</a>
 
+<head>
+    <title>Portfolio Agustín Alabarces</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="top_container">
+            <div class="lang_img"><img src="./esp.png" onclick="espaniol()" /></div>
+            <div class="title">Portfolio</div>
+            <div class="title">Agustín Alabarces</div>
+            <div class="info">
+            </div>
+        </div>
+        <div class="middle_container">
+            <div class="juegos_grid">
+                <div class="juego_box">
+                    <div class="box_title">Fulbacho</div>
+                    <img src="./fulbacho.jpg" onclick="toggleOpen('fulbacho')" /><br>
+                    <div class="popup start isClosed" id="fulbacho">
+                        <a href="https://tabletopia.com/games/fulbacho-t5euff/play-now" target=”_blank”>Play now</a>
+                    </div>
+
+                </div>
+                <div class="juego_box">
+                    <div class="box_title">Turtle vs Rabbit</div>
+                    <img src="./rvst.jpg" onclick="toggleOpen('turtle')" /><br>
+                    <div class="popup start isClosed" id="turtle">
+                        <a href="https://mazzalaialan.itch.io/turtlevsrabbit" target=”_blank”>Play now</a>
+                    </div>
+                </div>
+                <div class="juego_box">
+                    <div class="box_title">Horror Light</div>
+                    <img src="./horror.jpg" onclick="toggleOpen('horror')" /><br>
+                    <div class="popup start isClosed" id="horror">
+                        <a href="https://gd.games/mazzalaialan/horrorlight" target=”_blank”>Play now</a>
+                    </div>
+                </div>
+                <div class="juego_box">
+                    <div class="box_title">Gaucho World Cup</div>
+                    <img src="./gaucho.jpg" onclick="toggleOpen('gaucho')"><br>
+                    <div class="popup start isClosed" id="gaucho">
+                        <a href="https://gd.games/mazzalaialan/mundial-gaucho" target=”_blank”>Play now</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+        <div class="bottom_container">
+            <div class="contacto">
+                Mail: <a href="mailto:aalabarces@gmail.com">aalabarces@gmail.com</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
-<script>    
+<script>
     function espaniol() {
         window.location.replace("./index.html");
     }
     function isOpen(div) {
         if (div.classList.contains("isOpen")) {
-            return true}
-        else {return false}
+            return true
+        }
+        else { return false }
     }
     function closeAll() {
         let todos = document.getElementsByClassName("popup");
-        for (var i = 0; i<todos.length; i++) {
-            
+        for (var i = 0; i < todos.length; i++) {
+
             if (isOpen(todos[i])) {
                 todos[i].classList.remove("isOpen")
-                todos[i].classList.add("isClosed")}
+                todos[i].classList.add("isClosed")
+            }
         }
     }
     function toggleOpen(id) {
-        
+
         let frame = document.getElementById(id);
-        if (isOpen(frame)){
+        if (isOpen(frame)) {
             closeAll()
         }
         else {
